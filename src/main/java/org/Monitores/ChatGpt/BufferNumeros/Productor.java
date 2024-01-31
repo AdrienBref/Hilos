@@ -1,4 +1,0 @@
-package org.Monitores.ChatGpt.BufferNumeros;
-
-public class Productor {
-}
