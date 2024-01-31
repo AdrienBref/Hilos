@@ -14,7 +14,6 @@ public class GenShift_Numbers {
         shiftingNum = false;
     }
     
-    
     public int genRandNum(){
         int randNum = random.nextInt(75 - 0 + 1) + 0;
         return randNum;
@@ -36,7 +35,7 @@ public class GenShift_Numbers {
         }
     }
     
-    public synchronized void shiftNum() {
+    public synchronized void showBuffer() {
         if(shiftingNum) {
             System.out.print("Numero en el Buffer -> ");
             for (Integer numero: bufferNumeros) {

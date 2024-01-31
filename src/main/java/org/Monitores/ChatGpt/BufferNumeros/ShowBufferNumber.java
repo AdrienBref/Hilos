@@ -2,11 +2,11 @@ package org.Monitores.ChatGpt.BufferNumeros;
 
 import static java.lang.Thread.sleep;
 
-public class ShiftNumber extends Thread{
+public class ShowBufferNumber extends Thread{
     
     GenShift_Numbers genShiftNumbers;
     
-    public ShiftNumber(GenShift_Numbers genShiftNumbers) {
+    public ShowBufferNumber(GenShift_Numbers genShiftNumbers) {
         this.genShiftNumbers = genShiftNumbers;
     }
     
@@ -18,7 +18,7 @@ public class ShiftNumber extends Thread{
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             }
-            genShiftNumbers.shiftNum();
+            genShiftNumbers.showBuffer();
         }
     }
 }

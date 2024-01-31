@@ -11,7 +11,7 @@ public class main {
         try {
             new GenerateNumber(genShiftNumbers).start();
             sleep(300);
-            new ShiftNumber(genShiftNumbers).start();
+            new ShowBufferNumber(genShiftNumbers).start();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
