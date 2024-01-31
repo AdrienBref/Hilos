@@ -1,7 +1,5 @@
 package org.Monitores.ChatGpt.BufferNumeros;
 
-import javax.xml.stream.events.StartDocument;
-
 import static java.lang.Thread.sleep;
 
 public class main {

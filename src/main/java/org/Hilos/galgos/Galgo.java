@@ -1,4 +1,4 @@
-package org.galgos;
+package org.Hilos.galgos;
 
 public class Galgo extends Thread {
 

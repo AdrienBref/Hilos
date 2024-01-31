@@ -1,4 +1,4 @@
-package org.Monitores.Deposito;
+package org.Monitores.Uem.Deposito;
 
 public class main {
     public static void main(String[] args) {

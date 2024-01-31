@@ -1,4 +1,4 @@
-package org.Monitores.Filosofos;
+package org.Monitores.Uem.Filosofos;
 
 public class Filosofo implements Runnable {
     private String nombreFilosofo;

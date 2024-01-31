@@ -1,4 +1,4 @@
-package org.Monitores.Naufragos;
+package org.Monitores.Uem.Naufragos;
 
 public class main {
     public static void main(String[] args) throws InterruptedException {

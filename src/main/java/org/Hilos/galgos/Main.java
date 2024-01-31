@@ -1,4 +1,4 @@
-package org.galgos;
+package org.Hilos.galgos;
 
 import java.util.ArrayList;
 import java.util.Scanner;

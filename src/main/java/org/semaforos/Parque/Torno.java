@@ -1,4 +1,4 @@
-package org.Monitores.Parque;
+package org.semaforos.Parque;
 
 import java.util.concurrent.Semaphore;
 

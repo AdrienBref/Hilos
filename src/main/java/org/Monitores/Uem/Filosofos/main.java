@@ -1,6 +1,5 @@
-package org.Monitores.Filosofos;
+package org.Monitores.Uem.Filosofos;
 
-import javax.accessibility.AccessibleExtendedComponent;
 import java.util.ArrayList;
 
 public class main {
