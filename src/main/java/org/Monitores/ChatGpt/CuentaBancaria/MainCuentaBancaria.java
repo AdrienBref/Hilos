@@ -1,10 +1,8 @@
 package org.Monitores.ChatGpt.CuentaBancaria;
 
-import org.Monitores.ChatGpt.ContadorCompartido.TareaMostrar;
-
 import java.util.Random;
 
-public class Main {
+public class MainCuentaBancaria {
     public static void main(String[] args) {
         Cuenta_Monitor cuentaMonitor = new Cuenta_Monitor();
         Random random = new Random();

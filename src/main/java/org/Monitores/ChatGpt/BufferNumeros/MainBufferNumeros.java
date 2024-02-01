@@ -2,7 +2,7 @@ package org.Monitores.ChatGpt.BufferNumeros;
 
 import static java.lang.Thread.sleep;
 
-public class main {
+public class MainBufferNumeros {
 
     public static void main(String[] args) {
 

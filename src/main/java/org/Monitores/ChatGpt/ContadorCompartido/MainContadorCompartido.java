@@ -1,6 +1,6 @@
 package org.Monitores.ChatGpt.ContadorCompartido;
 
-public class Main {
+public class MainContadorCompartido {
     public static void main(String[] args) {
         Contador contador = new Contador();
 

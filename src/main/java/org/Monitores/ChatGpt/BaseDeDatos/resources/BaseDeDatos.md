@@ -1,0 +1,1 @@
+Control de Acceso a un Recurso Limitado: Imagina un recurso limitado (por ejemplo, un número limitado de conexiones a una base de datos). Escribe un monitor que controle el acceso a este recurso, permitiendo solo un número limitado de hilos usarlo al mismo tiempo.
