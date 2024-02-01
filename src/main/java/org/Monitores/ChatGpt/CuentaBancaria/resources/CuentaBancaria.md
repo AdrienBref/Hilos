@@ -1,0 +1,1 @@
+Simulación de un Banco: Crea una clase CuentaBancaria con métodos para depositar y retirar dinero. Implementa varios hilos que realicen operaciones bancarias en la misma cuenta. Usa un monitor para evitar condiciones de carrera.
