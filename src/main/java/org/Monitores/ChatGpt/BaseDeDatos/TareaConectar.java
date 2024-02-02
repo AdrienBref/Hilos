@@ -3,6 +3,8 @@ package org.Monitores.ChatGpt.BaseDeDatos;
 public class TareaConectar implements Runnable{
     
     BaseDeDatos baseDeDatos;
+    
+    
     private int id;
     
     public TareaConectar(BaseDeDatos baseDeDatos, int id) {
