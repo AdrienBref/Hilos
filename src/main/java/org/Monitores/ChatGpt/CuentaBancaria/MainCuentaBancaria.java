@@ -9,7 +9,7 @@ public class MainCuentaBancaria {
         int randNum = random.nextInt(100 - 0 + 1) + 0;
         Thread[] hilosRetirada = new Thread[3];
         Thread[] hilosIngreso = new Thread[3];
-        Thread hiloMostrar = new Thread(new Saldo(cuentaMonitor));
+        Thread hiloMostrar = new Thread(new TareaMostrarSaldo(cuentaMonitor));
         
         for(int i = 0; i < hilosRetirada.length; i++) {
             hilosRetirada[i] = new Thread(new TareaRetirar(cuentaMonitor, 1));

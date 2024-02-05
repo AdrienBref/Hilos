@@ -1,10 +1,10 @@
 package org.Monitores.ChatGpt.CuentaBancaria;
 
-public class Saldo implements Runnable{
+public class TareaMostrarSaldo implements Runnable{
     
     Cuenta_Monitor cuenta;
     
-    public Saldo(Cuenta_Monitor cuenta) {
+    public TareaMostrarSaldo(Cuenta_Monitor cuenta) {
         this.cuenta = cuenta;
     }
 

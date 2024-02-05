@@ -16,7 +16,7 @@ public class TareaConectar implements Runnable{
     @Override
     public void run() {
         while(true) {
-            baseDeDatos.conectar(id);
+            //baseDeDatos.conectar(id);
         }
     }
 }

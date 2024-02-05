@@ -1,35 +1,41 @@
 package org.Monitores.Uem.Filosofos;
 
-public class Filosofo implements Runnable {
-    private String nombreFilosofo;
-    private int numeroFilosofo;
-    private Tenedores tenedor1;
-    private Tenedores tenedor2;
-
-    public Filosofo(int numeroFilosofo, Tenedores tenedor1, Tenedores tenedor2) {
-        this.numeroFilosofo = numeroFilosofo;
-        this.tenedor1 = tenedor1;
-        this.tenedor2 = tenedor2;
-        nombreFilosofo = "Filosofo numero " + numeroFilosofo;
+public class Filosofo extends Thread {
+    
+    private Mesa mesa;
+    private int comensal;
+    private int indiceComensal;
+    
+    public Filosofo(Mesa m, int comensal){
+        this.mesa = m;
+        this.comensal = comensal;
+        this.indiceComensal = comensal - 1;
     }
-
-    public String getNombreFilosofo() {
-        return nombreFilosofo;
-    }
-
-    @Override
-    public void run() {
-        try {
-            tenedor1.tenedorUsandose(nombreFilosofo);
-            tenedor2.tenedorUsandose(nombreFilosofo);
-            
-            if(tenedor1.isTenedorFlag() && tenedor2.isTenedorFlag()) {
-                System.out.println(nombreFilosofo + " comiendo...");
-            } else {
-                System.out.println(nombreFilosofo + " esperando...");
-            }
-        } catch (InterruptedException e) {
-            throw new RuntimeException(e);
+    
+    public void run(){
+        while(true){
+            pensando();
+            mesa.cogerTenedores(indiceComensal);
+            comiendo();
+            System.out.println("Filosofo " + comensal +  " deja de comer, tenedores libres " + (mesa.tenedorIzquierda(indiceComensal) + 1) + ", " + (mesa.tenedorDerecha(indiceComensal) + 1) );
+            mesa.dejarTenedores(indiceComensal);
         }
     }
+    
+    public void pensando(){
+       
+        System.out.println("Filosofo " + comensal + " esta pensando");
+        try {
+            sleep((long) (Math.random() * 4000));
+        } catch (InterruptedException ex) { }
+        
+    }
+    
+    public void comiendo(){
+        System.out.println("Filosofo " + comensal + " esta comiendo");
+        try {
+            sleep((long) (Math.random() * 4000));
+        } catch (InterruptedException ex) { }
+    }
+    
 }
