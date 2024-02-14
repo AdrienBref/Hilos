@@ -13,6 +13,8 @@ public class Main {
         Semaphore tenedor4 = new Semaphore(1);
         Semaphore tenedor5 = new Semaphore(1);
 
+        System.out.println("Hola");
+
         Alumno alumno1 = new Alumno(tenedor1, tenedor2, 1);
         Alumno alumno2 = new Alumno(tenedor2, tenedor3, 2);
         Alumno alumno3 = new Alumno(tenedor3, tenedor4, 3);
