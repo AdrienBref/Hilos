@@ -30,6 +30,5 @@ public class Main {
         
         System.out.println("Total de asistentes en palco Vip: " + Asistente.getContadorPersonas());    
         
-
     }
 }

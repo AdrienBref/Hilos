@@ -4,6 +4,12 @@ import java.util.concurrent.Semaphore;
 
 public class ZonaVip {
     
+    /*
+    * La zonaVip se ocupa de administrar los permisos de torno(semaforo de un 1 permiso) y asientos
+    * de zonaVip(semaforo de 6 permisos) de cada instancia de zonaVip
+    * 
+    * */
+    
     private Semaphore torno = new Semaphore(1);
     private Semaphore cantidadPermitida;
     private int numeroSalaVip;
@@ -16,7 +22,6 @@ public class ZonaVip {
         
     }
     
-
     public Semaphore getCantidadPermitida() {
         return cantidadPermitida;
     }
@@ -28,10 +33,7 @@ public class ZonaVip {
     public Semaphore getTorno() {
         return torno;
     }
-
-    public int getContadorPersonas() {
-        return contadorPersonas;
-    }
+    
 
 
 }
