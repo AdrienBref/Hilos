@@ -4,21 +4,18 @@ import java.util.concurrent.Semaphore;
 
 public class ZonaVip {
     
-    private static Semaphore torno = new Semaphore(1);
-    private Semaphore cantidadPermitida = new Semaphore(6);
+    private Semaphore torno = new Semaphore(1);
+    private Semaphore cantidadPermitida;
     private int numeroSalaVip;
-    private static int contadorPersonas;
+    private int contadorPersonas;
     
 
     public ZonaVip(int numeroSalaVip) {
+        this.cantidadPermitida = new Semaphore(6);
         this.numeroSalaVip = numeroSalaVip;
-        contadorPersonas++;
         
     }
-
-    public int getNumeroSalaVip() {
-        return numeroSalaVip;
-    }
+    
 
     public Semaphore getCantidadPermitida() {
         return cantidadPermitida;
@@ -28,15 +25,13 @@ public class ZonaVip {
         this.cantidadPermitida = cantidadPermitida;
     }
 
-    public static Semaphore getTorno() {
+    public Semaphore getTorno() {
         return torno;
     }
 
-    public static int getContadorPersonas() {
+    public int getContadorPersonas() {
         return contadorPersonas;
     }
 
-    public static void setTorno(Semaphore torno) {
-        ZonaVip.torno = torno;
-    }
+
 }

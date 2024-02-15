@@ -5,34 +5,58 @@ import java.util.concurrent.Semaphore;
 
 public class Asistente extends Thread{
     
-    private static 
-    ZonaVip zonaVipAsignada;
+    private int zonaVipAsignada = 0;
     private int numeroAsistente;
-    private Random random = new Random();
+    private ZonaVip[] zonasVip;
+    int asientosLibresTotales;
+    private static final Object lock = new Object();
+    private static int contadorPersonas;
     
-    private int numeroZonaVip;
-    
+
     public Asistente(ZonaVip[] zonasVip, int numeroAsistente) {
-        numeroZonaVip = random.nextInt(3 - 0 + 1) + 0;
-        zonaVipAsignada = new ZonaVip(numeroZonaVip);
+        this.zonasVip = zonasVip;
         this.numeroAsistente = numeroAsistente;
-        
     }
     
     @Override
     public void run() {
         super.run();
         try {
-            System.out.println("Asistente numero " + numeroAsistente + " va a zona vip " + numeroZonaVip);
             
-            zonaVipAsignada.getCantidadPermitida().acquire();
-            zonaVipAsignada.getTorno().acquire();
-            zonaVipAsignada.getTorno().release();
-            System.out.println();
+            for(int i = 0; i < zonasVip.length; i++) {
+                asientosLibresTotales = zonasVip[i].getCantidadPermitida().availablePermits();
+            }
+            
+            if(asientosLibresTotales > 0) {
+                int asientosDisponibles = zonasVip[zonaVipAsignada].getCantidadPermitida().availablePermits();
+
+                while(asientosDisponibles == 0) {
+                    zonaVipAsignada++;
+                    asientosDisponibles = zonasVip[zonaVipAsignada].getCantidadPermitida().availablePermits();
+                }
+
+                zonasVip[zonaVipAsignada].getCantidadPermitida().acquire();
+                System.out.println("Asistente " + numeroAsistente + " entra en sala " + zonaVipAsignada);
+                zonasVip[zonaVipAsignada].getTorno().acquire();
+                sleep(1500);
+                zonasVip[zonaVipAsignada].getTorno().release();
+                synchronized (lock) {
+                    contadorPersonas++;
+                }
+                
+            } else {
+                System.out.println("Asistente " + numeroAsistente + " sin sala vip");
+            }
+            
+
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
 
+    }
+
+    public static int getContadorPersonas() {
+        return contadorPersonas;
     }
     
 }
